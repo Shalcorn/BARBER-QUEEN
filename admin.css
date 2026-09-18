@@ -1,0 +1,265 @@
+.admin-page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.admin-login,
+.booking-admin-card {
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 253, 251, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.admin-login {
+  width: min(520px, 100%);
+  margin: 10vh auto 0;
+}
+
+.admin-login form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.admin-login input {
+  min-height: 48px;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+}
+
+.admin-error {
+  min-height: 1.5rem;
+  color: var(--rose-deep);
+  font-weight: 700;
+}
+
+.admin-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.admin-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.admin-note,
+.empty-state {
+  color: var(--muted);
+}
+
+.empty-state {
+  display: grid;
+  gap: 0.3rem;
+  padding: 2rem;
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.admin-stat {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 253, 251, 0.88);
+  box-shadow: var(--shadow);
+}
+
+.admin-stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.admin-stat strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.2rem;
+}
+
+.pending-stat strong { color: #a06a1b; }
+.approved-stat strong { color: #32805b; }
+.rejected-stat strong { color: var(--rose-deep); }
+
+.booking-toolbar {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.search-field,
+.filter-field {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.search-field input,
+.filter-field select {
+  min-height: 46px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+}
+
+.booking-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.booking-admin-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.booking-details {
+  min-width: 0;
+}
+
+.booking-card-topline,
+.booking-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.booking-id {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.booking-admin-card h2 {
+  margin: 0.4rem 0;
+}
+
+.booking-admin-card p {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+}
+
+.booking-service {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.booking-service strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.booking-time {
+  justify-content: flex-start;
+  margin: 0.7rem 0;
+  color: var(--muted);
+}
+
+.booking-phone {
+  color: var(--rose-deep);
+  font-weight: 700;
+}
+
+.booking-status-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.booking-status-label.pending {
+  color: #a06a1b;
+}
+
+.booking-status-label.approved {
+  color: #32805b;
+}
+
+.booking-status-label.rejected {
+  color: var(--rose-deep);
+}
+
+.booking-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.approve-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.text-button {
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: var(--rose-deep);
+  cursor: pointer;
+}
+
+@media (max-width: 680px) {
+  .admin-header,
+  .booking-admin-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .booking-actions {
+    justify-content: flex-start;
+  }
+
+  .admin-stats,
+  .booking-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .booking-toolbar .search-field {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 460px) {
+  .admin-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-header-actions {
+    justify-content: flex-start;
+  }
+}

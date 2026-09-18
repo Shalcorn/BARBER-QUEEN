@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BARBER QUEEN | Owner Bookings</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main class="admin-page">
+      <section class="admin-login" id="adminLogin">
+        <p class="eyebrow">Owner access</p>
+        <h1>Booking management</h1>
+        <p>Enter the owner PIN to manage BARBER QUEEN booking requests.</p>
+        <form id="adminLoginForm">
+          <label for="adminPin">Owner PIN</label>
+          <input id="adminPin" type="password" inputmode="numeric" required />
+          <button class="button" type="submit">Open bookings</button>
+          <p class="admin-error" id="adminError" role="alert"></p>
+        </form>
+      </section>
+
+      <section class="admin-dashboard" id="adminDashboard" hidden>
+        <div class="admin-header">
+          <div>
+            <p class="eyebrow">BARBER QUEEN / OWNER DESK</p>
+            <h1>Booking control center</h1>
+          </div>
+          <div class="admin-header-actions">
+            <a class="button button-secondary" href="index.html#booking">View booking form</a>
+            <button class="button button-secondary" type="button" id="adminLogout">Lock dashboard</button>
+          </div>
+        </div>
+        <p class="admin-note">Review each request, approve the appointments you can accommodate, and reply to clients from your phone.</p>
+        <div class="admin-stats" aria-label="Booking summary">
+          <div class="admin-stat"><span>Total requests</span><strong id="totalCount">0</strong></div>
+          <div class="admin-stat pending-stat"><span>Awaiting approval</span><strong id="pendingCount">0</strong></div>
+          <div class="admin-stat approved-stat"><span>Approved</span><strong id="approvedCount">0</strong></div>
+          <div class="admin-stat rejected-stat"><span>Rejected</span><strong id="rejectedCount">0</strong></div>
+        </div>
+        <div class="booking-toolbar">
+          <label class="search-field">
+            <span>Search bookings</span>
+            <input type="search" id="bookingSearch" placeholder="Name, service, or phone" />
+          </label>
+          <label class="filter-field">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="all">All requests</option>
+              <option value="pending">Awaiting approval</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+            </select>
+          </label>
+        </div>
+        <div class="booking-list" id="bookingList"></div>
+      </section>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>
